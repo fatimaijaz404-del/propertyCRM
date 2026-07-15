@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Zap, Search, FileStack, Cloud, Users, Layers } from "lucide-react";
+import generateMoreSaleImg from "../assets/generate-more-sale.png";
 
 const tabs = [
   {
@@ -71,7 +72,7 @@ const tabs = [
 function FeaturesOverview() {
   const [active, setActive] = useState(tabs[0].id);
   const tab = tabs.find((t) => t.id === active);
-  const ActiveIcon = tab.points[0].icon;
+  
 
   return (
     <section className="bg-white py-24">
@@ -102,36 +103,14 @@ function FeaturesOverview() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Illustrative mockup panel */}
-          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-            <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
-              <div className="flex items-center gap-2 mb-5">
-                <span className="w-3 h-3 rounded-full bg-red-300" />
-                <span className="w-3 h-3 rounded-full bg-amber-300" />
-                <span className="w-3 h-3 rounded-full bg-emerald-300" />
-              </div>
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center">
-                  <ActiveIcon className="w-5 h-5 text-emerald-700" strokeWidth={1.75} />
-                </div>
-                <div className="flex-1">
-                  <div className="h-2.5 bg-slate-200 rounded w-2/3 mb-2" />
-                  <div className="h-2 bg-slate-100 rounded w-1/3" />
-                </div>
-              </div>
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="flex items-center gap-3 py-2.5 border-t border-slate-100">
-                  <div className="w-8 h-8 rounded-full bg-slate-100" />
-                  <div className="flex-1">
-                    <div className="h-2 bg-slate-200 rounded w-1/2 mb-1.5" />
-                    <div className="h-2 bg-slate-100 rounded w-1/4" />
-                  </div>
-                  <div className="h-5 w-14 rounded bg-emerald-50" />
-                </div>
-              ))}
-            </div>
+          {/* Image panel */}
+          <div>
+            <img
+              src={generateMoreSaleImg}
+              alt={tab.title}
+              className="w-full rounded-2xl shadow-lg border border-slate-200"
+            />
           </div>
-
           {/* Text content */}
           <div>
             <p className="text-emerald-700 font-semibold uppercase text-xs tracking-wide mb-3">
