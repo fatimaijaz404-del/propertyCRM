@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Zap, Search, FileStack, Cloud, Users, Layers } from "lucide-react";
 import generateMoreSaleImg from "../assets/generate-more-sale.png";
-
+import generateMoreSaleImg from "../assets/generate-more-sale.png";
+import organizeActivitiesImg from "../assets/organize-activities.png";
+import trackCampaignsImg from "../assets/track-campaigns.png";
+import propertyListingImg from "../assets/property-listing.png";
+import manageTeamsImg from "../assets/manage-teams.png";
 const tabs = [
   {
     id: "sales",
     label: "Generate More Sales",
+    image: generateMoreSaleImg,
     eyebrow: "Faster than ever",
     title: "Generating More Sales",
     description:
@@ -19,6 +24,7 @@ const tabs = [
   {
     id: "activities",
     label: "Organize Sale Activities",
+    image: organizeActivitiesImg,
     eyebrow: "Stay on schedule",
     title: "Organize Your Activities & Tasks",
     description:
@@ -32,6 +38,7 @@ const tabs = [
   {
     id: "campaigns",
     label: "Track Sale Campaigns",
+    image: trackCampaignsImg,
     eyebrow: "Less work, more results",
     title: "Tracking Your Campaigns & Sales Queries",
     description:
@@ -44,6 +51,7 @@ const tabs = [
   {
     id: "listing",
     label: "Property Listing",
+    image: propertyListingImg,
     eyebrow: "All your assets, organized",
     title: "Manage Your Property Listings",
     description:
@@ -57,6 +65,7 @@ const tabs = [
   {
     id: "teams",
     label: "Manage Teams",
+    image: manageTeamsImg,
     eyebrow: "One team, one view",
     title: "Smoothly Manage Teams",
     description:
@@ -106,10 +115,9 @@ function FeaturesOverview() {
           {/* Image panel */}
           <div>
             <img
-              src={generateMoreSaleImg}
+               src={tab.image}
               alt={tab.title}
-              className="w-full rounded-2xl shadow-lg border border-slate-200"
-            />
+className="w-full rounded-2xl shadow-lg border border-slate-200"            />
           </div>
           {/* Text content */}
           <div>
