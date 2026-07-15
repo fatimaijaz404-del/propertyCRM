@@ -43,7 +43,7 @@ function Hero() {
             Property CRM helps developers and brokers automate lead tracking, manage listings, and close deals faster — without switching between five different tools.
           </p>
 
-          
+          </div>
 
         {/* RIGHT: Lead capture form */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-2xl shadow-slate-300/40 p-8">
