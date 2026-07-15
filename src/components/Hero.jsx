@@ -8,7 +8,7 @@ function Hero() {
     market: "",
     message: "",
   });
-  const [status, setStatus] = useState("idle"); // idle | loading | success
+  const [status, setStatus] = useState("idle");
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -25,15 +25,13 @@ function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden">
-
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-100 rounded-full blur-3xl opacity-40 -z-10 translate-x-1/3 -translate-y-1/3"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-100 rounded-full blur-3xl opacity-40 -z-10 translate-x-1/3 -translate-y-1/3"></div>
       <div className="absolute top-40 left-0 w-[400px] h-[400px] bg-slate-100 rounded-full blur-3xl opacity-60 -z-10 -translate-x-1/3"></div>
 
       <div className="grid md:grid-cols-2 gap-16 items-center px-8 py-24 max-w-7xl mx-auto">
 
-        {/* LEFT: Text content */}
         <div>
-          <p className="text-amber-700 font-semibold tracking-wide uppercase text-sm mb-4">
+          <p className="text-emerald-700 font-semibold tracking-wide uppercase text-sm mb-4">
             Real Estate CRM
           </p>
           <h1 className="text-5xl font-bold text-slate-900 leading-[1.1] mb-6 tracking-tight">
@@ -42,10 +40,8 @@ function Hero() {
           <p className="text-lg text-slate-600 mb-8 leading-relaxed">
             Property CRM helps developers and brokers automate lead tracking, manage listings, and close deals faster — without switching between five different tools.
           </p>
+        </div>
 
-          </div>
-
-        {/* RIGHT: Lead capture form */}
         <div className="bg-white rounded-2xl border border-slate-200 shadow-2xl shadow-slate-300/40 p-8">
           <h2 className="text-xl font-bold text-slate-900 mb-1">Book a Demo</h2>
           <p className="text-sm text-slate-500 mb-6">Tell us a bit about your business and we'll be in touch.</p>
@@ -58,7 +54,7 @@ function Hero() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-600/30 focus:border-amber-600 transition"
+              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 transition"
             />
             <input
               type="tel"
@@ -67,7 +63,7 @@ function Hero() {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-600/30 focus:border-amber-600 transition"
+              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 transition"
             />
             <input
               type="email"
@@ -76,13 +72,13 @@ function Hero() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-600/30 focus:border-amber-600 transition"
+              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 transition"
             />
             <select
               name="market"
               value={formData.market}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-slate-200 text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-600/30 focus:border-amber-600 transition"
+              className="w-full px-4 py-3 rounded-lg border border-slate-200 text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 transition"
             >
               <option value="">Select Market</option>
               <option value="uae">UAE</option>
@@ -96,13 +92,13 @@ function Hero() {
               rows="3"
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-600/30 focus:border-amber-600 transition resize-none"
+              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 transition resize-none"
             />
 
             <button
               type="submit"
               disabled={status === "loading"}
-              className="w-full bg-amber-700 text-white px-6 py-3.5 rounded-lg font-medium shadow-lg shadow-amber-700/25 hover:bg-amber-800 hover:shadow-xl transition-all duration-200 disabled:opacity-60"
+              className="w-full bg-emerald-700 text-white px-6 py-3.5 rounded-lg font-medium shadow-lg shadow-emerald-700/25 hover:bg-emerald-800 hover:shadow-xl transition-all duration-200 disabled:opacity-60"
             >
               {status === "loading" ? "Sending..." : status === "success" ? "✓ Sent — We'll be in touch" : "Book a Demo"}
             </button>
