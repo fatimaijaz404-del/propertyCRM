@@ -1,0 +1,9 @@
+[33m8002b5c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Fix Features component JSX closing tag
+[33m18d0f09[m Add lucide icons to feature cards
+[33m2bbb91e[m Add Features section to App
+[33mad27632[m Add Features section, fix Hero closing div
+[33m13e22e1[m Remove trust indicators from hero section
+[33mdcc6abb[m Updated logo design
+[33mc18a90a[m rename step 2
+[33m140e2a0[m rename step 1
+[33m246fcf8[m Initial commit - Navbar and Hero sections

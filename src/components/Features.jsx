@@ -1,3 +1,38 @@
+import { FileText, Filter, Users, Wallet, Hash, Headset } from "lucide-react";
+
+const features = [
+  {
+    icon: FileText,
+    title: "Property Listing",
+    description: "Manage and display your real estate listings with real-time updates.",
+  },
+  {
+    icon: Filter,
+    title: "Sale Funnel",
+    description: "Refine your search with customizable filters to find the right properties fast.",
+  },
+  {
+    icon: Users,
+    title: "Multi Projects",
+    description: "Manage multiple projects at once, keeping every team organized and productive.",
+  },
+  {
+    icon: Wallet,
+    title: "Web Leads",
+    description: "Connect with the right prospects through targeted web lead capture.",
+  },
+  {
+    icon: Hash,
+    title: "Social Media Integration",
+    description: "Stay connected and grow your audience directly from the CRM.",
+  },
+  {
+    icon: Headset,
+    title: "Call Centre & Meetings",
+    description: "24/7 support and meeting scheduling built into your workflow.",
+  },
+];
+
 function Features() {
   return (
     <section id="features" className="bg-sky-50/60 py-24">
