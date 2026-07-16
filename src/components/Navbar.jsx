@@ -5,12 +5,8 @@ function Navbar() {
     <nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
 
       <div className="flex items-center gap-2.5">
-        <img src={logo} alt="Property CRM Logo" className="h-9 w-auto" />
-        <span className="text-xl font-bold tracking-tight">
-          <span className="text-slate-900">Property</span>
-          <span className="text-emerald-700">CRM</span>
-        </span>
-      </div>
+  <img src={logo} alt="Property CRM Logo" className="h-14 w-auto" />
+</div>
 
       <ul className="hidden md:flex gap-10 text-slate-600 font-medium text-sm">
         <li><a href="#home" className="hover:text-emerald-700 transition-colors">Home</a></li>
