@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Zap, Search, FileStack, Cloud, Users, Layers } from "lucide-react";
 import generateMoreSaleImg from "../assets/generate-more-sale.png";
-import organizeActivitiesImg from "../assets/organize-activities.png";
-import trackCampaignsImg from "../assets/track-campaigns.png";
-import propertyListingImg from "../assets/property-listing.png";
-import manageTeamsImg from "../assets/manage-teams.png";
+import organizeActivitiesImg from "../assets/organize-activities.JPG";
+import trackCampaignsImg from "../assets/track-camaigns.JPG";
+import propertyListingImg from "../assets/property-listing.JPG";
+import manageTeamsImg from "../assets/manage-teams.JPG";
 const tabs = [
   {
     id: "sales",
