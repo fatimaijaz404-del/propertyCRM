@@ -34,12 +34,21 @@ function Hero() {
           <p className="text-emerald-700 font-semibold tracking-wide uppercase text-sm mb-4">
             Real Estate CRM
           </p>
-          <h1 className="text-5xl font-bold text-slate-900 leading-[1.1] mb-6 tracking-tight">
+          <h1 className="text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight">
             Enhance your sales funnel with one connected CRM.
           </h1>
-          <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+          <p className="text-lg text-slate-600 mb-10 leading-relaxed">
             Property CRM helps developers and brokers automate lead tracking, manage listings, and close deals faster — without switching between five different tools.
           </p>
+
+          <div className="flex flex-wrap items-center gap-4">
+            <a href="#contact" className="bg-emerald-700 text-white px-7 py-3.5 rounded-lg font-semibold shadow-lg shadow-emerald-700/25 hover:bg-emerald-800 hover:shadow-xl transition-all duration-200">
+              Book a Demo
+            </a>
+            <a href="#features" className="border-2 border-emerald-700 text-emerald-700 px-7 py-3.5 rounded-lg font-semibold hover:bg-emerald-50 transition-all duration-200">
+              View Features
+            </a>
+          </div>
         </div>
 
         <div className="bg-white rounded-2xl border border-slate-200 shadow-2xl shadow-slate-300/40 p-8">
