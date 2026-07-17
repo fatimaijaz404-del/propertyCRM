@@ -1,81 +1,160 @@
 import { useState } from "react";
-import { Plus } from "lucide-react";
+import { Plus, Minus, HelpCircle } from "lucide-react";
 
 const faqs = [
   {
     question: "What is Property CRM software?",
-    answer:
-      "It's a digital platform that helps real estate businesses manage leads and customer relationships in one place. It centralizes property and client data, automates repetitive tasks, and keeps every conversation organized in a single dashboard.",
+    answer: "Property CRM software is a platform that helps real estate agencies manage listings, leads, and sales activities in one connected system.",
   },
   {
-    question: "How does it improve my team's productivity?",
-    answer:
-      "By automating routine work like lead assignment and follow-ups, and giving your team a clear view of every deal's stage. Agents spend less time on admin and more time closing.",
+    question: "How can Sales CRM improve Property productivity?",
+    answer: "By automating repetitive tasks, organizing leads by stage, and giving your team clear visibility into every deal, so nothing gets missed.",
   },
   {
-    question: "What features should I look for in a CRM?",
-    answer:
-      "Look for solid contact and lead management, a visual sales pipeline, integrated communication, reporting, and easy access from any device. Integration with your existing marketing tools is a big plus too.",
+    question: "What are the key features of a good Property CRM system?",
+    answer: "Lead tracking, property listing management, campaign tracking, team collaboration tools, and reporting are the core features to look for.",
   },
   {
-    question: "Is this suitable for a small real estate business?",
-    answer:
-      "Yes. Smaller teams often benefit the most since the CRM keeps every lead and listing organized from day one, without needing a large operations team to manage it.",
+    question: "Is Property CRM software suitable for small businesses?",
+    answer: "Yes — Property CRM scales with your team, whether you're a single agent or a growing agency with multiple projects.",
   },
   {
-    question: "Can it help with retaining customers long-term?",
-    answer:
-      "It tracks every past interaction so you can follow up at the right time with the right message. That consistency is usually what keeps clients coming back for future deals.",
+    question: "How does Sales CRM support customer retention?",
+    answer: "By keeping a full history of every interaction, so your team can follow up at the right time with the right context.",
   },
 ];
 
 function FAQs() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
+
+  function toggle(index) {
+    setOpenIndex(openIndex === index ? null : index);
+  }
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+  const [status, setStatus] = useState("idle");
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("loading");
+    setTimeout(() => setStatus("success"), 1200);
+  }
 
   return (
-    <section id="faqs" className="bg-white py-24">
-      <div className="px-8 max-w-3xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-emerald-700 font-semibold tracking-wide uppercase text-sm mb-3">
-            F.A.Qs
-          </p>
-          <h2 className="text-4xl font-bold text-slate-900 tracking-tight">
-            Frequently asked questions
-          </h2>
+    <section className="bg-white py-24">
+      <div className="px-8 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+
+        {/* LEFT: FAQ Accordion */}
+        <div>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-14 h-14 rounded-xl bg-emerald-700 flex items-center justify-center flex-shrink-0">
+              <HelpCircle className="w-7 h-7 text-white" strokeWidth={1.75} />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900">F.A.Qs</h2>
+              <p className="text-slate-500">Frequently asked questions</p>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <div
+                  key={index}
+                  className="border border-slate-200 rounded-xl overflow-hidden"
+                >
+                  <button
+                    onClick={() => toggle(index)}
+                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                  >
+                    <span className="font-bold text-slate-900">{faq.question}</span>
+                    <span className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0">
+                      {isOpen ? (
+                        <Minus className="w-4 h-4 text-emerald-700" />
+                      ) : (
+                        <Plus className="w-4 h-4 text-emerald-700" />
+                      )}
+                    </span>
+                  </button>
+                  {isOpen && (
+                    <p className="px-6 pb-5 text-slate-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        <div className="divide-y divide-slate-200 border-t border-b border-slate-200">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div key={index}>
-                <button
-                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                  className="w-full flex items-center justify-between gap-4 py-5 text-left"
-                >
-                  <span className="text-base font-semibold text-slate-900">
-                    {faq.question}
-                  </span>
-                  <Plus
-                    className={`w-5 h-5 text-emerald-700 flex-shrink-0 transition-transform duration-200 ${
-                      isOpen ? "rotate-45" : ""
-                    }`}
-                    strokeWidth={2}
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-200 ${
-                    isOpen ? "max-h-40 pb-5" : "max-h-0"
-                  }`}
-                >
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+        {/* RIGHT: Contact form */}
+        <div className="relative">
+          <h2 className="text-3xl font-extrabold text-slate-900 mb-8">
+            Get In <span className="text-emerald-700">Touch</span>
+          </h2>
+
+          <div className="relative bg-white rounded-2xl border border-slate-200 shadow-xl p-8">
+            <div className="absolute -right-3 top-0 bottom-0 w-3 bg-emerald-700 rounded-r-2xl"></div>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 transition"
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 transition"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 transition"
+              />
+              <textarea
+                name="message"
+                placeholder="Describe your requirements"
+                rows="4"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 transition resize-none"
+              />
+
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="bg-emerald-700 text-white px-8 py-3.5 rounded-lg font-medium shadow-lg shadow-emerald-700/25 hover:bg-emerald-800 transition-all duration-200 disabled:opacity-60"
+              >
+                {status === "loading" ? "Sending..." : status === "success" ? "✓ Sent" : "Submit"}
+              </button>
+            </form>
+          </div>
         </div>
+
       </div>
     </section>
   );

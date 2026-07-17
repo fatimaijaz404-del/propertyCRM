@@ -5,6 +5,7 @@ import FAQs from "./components/FAQs";
 import FeaturesOverview from "./components/FeaturesOverview";
 import OneWindowSolution from "./components/OneWindowSolution";
 import Testimonials from "./components/Testimonials";
+import FAQs from "./components/FAQs";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <FeaturesOverview />
       <OneWindowSolution />
       <Testimonials />
-      {/* <FAQs /> */}
+      <FAQs /> 
 
     </div>
   );
