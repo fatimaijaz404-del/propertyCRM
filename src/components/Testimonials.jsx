@@ -18,37 +18,39 @@ const testimonials = [
 function Testimonials() {
   return (
     <section className="bg-white py-24">
-      <div className="px-8 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div className="px-8 max-w-7xl mx-auto">
 
-        {/* LEFT: Image */}
-        <div>
-          <img
-            src={testimonialImg}
-            alt="Happy Property CRM customer"
-            className="w-full h-auto rounded-2xl"
-          />
+        {/* TOP: Image + Heading side by side */}
+        <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
+          <div>
+            <img
+              src={testimonialImg}
+              alt="Happy Property CRM customer"
+              className="w-full h-auto"
+            />
+          </div>
+
+          <div className="md:border-l md:border-slate-200 md:pl-16">
+            <p className="text-emerald-700 font-semibold uppercase italic tracking-wide text-sm mb-4">
+              Our Testimonials
+            </p>
+            <h2 className="text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              What our <span className="text-emerald-700">customers</span> said about us
+            </h2>
+          </div>
         </div>
 
-        {/* RIGHT: Testimonials */}
-        <div>
-          <p className="text-emerald-700 font-semibold uppercase italic tracking-wide text-sm mb-4">
-            Our Testimonials
-          </p>
-          <h2 className="text-4xl font-bold text-slate-900 tracking-tight mb-12">
-            What our <span className="text-emerald-700">customers</span> said about us
-          </h2>
-
-          <div className="space-y-10">
-            {testimonials.map((t, index) => (
-              <div key={index} className="border-l-4 border-emerald-700 pl-6">
-                <p className="text-slate-600 leading-relaxed mb-4 italic">
-                  "{t.quote}"
-                </p>
-                <p className="font-semibold text-slate-900">{t.name}</p>
-                <p className="text-sm text-slate-500">{t.role}</p>
-              </div>
-            ))}
-          </div>
+        {/* BOTTOM: Two testimonials side by side */}
+        <div className="grid md:grid-cols-2 gap-16">
+          {testimonials.map((t, index) => (
+            <div key={index}>
+              <p className="text-slate-500 leading-relaxed mb-6 italic">
+                "{t.quote}"
+              </p>
+              <p className="font-bold text-slate-900">{t.name}</p>
+              <p className="text-sm text-slate-500">{t.role}</p>
+            </div>
+          ))}
         </div>
 
       </div>
