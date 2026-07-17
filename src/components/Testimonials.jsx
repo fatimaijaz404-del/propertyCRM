@@ -1,4 +1,4 @@
-import testimonialImg from "../assets/testimonial-woman.JPG";
+import testimonialImg from "../assets/testimonial-woman.png";
 
 const testimonials = [
   {
@@ -20,7 +20,6 @@ function Testimonials() {
     <section className="bg-white py-24">
       <div className="px-8 max-w-7xl mx-auto">
 
-        {/* TOP: Image + Heading side by side */}
         <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
           <div>
             <img
@@ -40,15 +39,16 @@ function Testimonials() {
           </div>
         </div>
 
-        {/* BOTTOM: Two testimonials side by side */}
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-2 gap-16 items-stretch">
           {testimonials.map((t, index) => (
-            <div key={index}>
-              <p className="text-slate-500 leading-relaxed mb-6 italic">
+            <div key={index} className="flex flex-col">
+              <p className="text-slate-500 leading-relaxed italic flex-1">
                 "{t.quote}"
               </p>
-              <p className="font-bold text-slate-900">{t.name}</p>
-              <p className="text-sm text-slate-500">{t.role}</p>
+              <div className="mt-6">
+                <p className="font-bold text-slate-900">{t.name}</p>
+                <p className="text-sm text-slate-500">{t.role}</p>
+              </div>
             </div>
           ))}
         </div>
