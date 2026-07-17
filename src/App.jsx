@@ -5,6 +5,8 @@ import FAQs from "./components/FAQs";
 import FeaturesOverview from "./components/FeaturesOverview";
 import OneWindowSolution from "./components/OneWindowSolution";
 import Testimonials from "./components/Testimonials";
+import Footer from "./components/Footer";
+   // ... <Footer /> as last element inside <div>
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <OneWindowSolution />
       <Testimonials />
       <FAQs /> 
+       <Footer/>
 
     </div>
   );
