@@ -1,4 +1,4 @@
-import testimonialImg from "../assets/testimonial-woman.png";
+import testimonialImg from "../assets/testimonial-woman.JPG";
 
 const testimonials = [
   {
